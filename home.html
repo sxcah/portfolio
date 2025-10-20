@@ -1,35 +1,185 @@
+<style>
+    /* *** START: GOOGLE SITES MARGIN BYPASS CSS ***
+    This is essential to remove the default padding/margin of the iframe container
+    that Google Sites places around the embedded content. 
+    */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        /* Ensure the body expands to the full height of the iframe container */
+        height: 100%; 
+    }
+    /* *** END: GOOGLE SITES MARGIN BYPASS CSS ***
+    */
+    
+    /* Basic Reset and Variables */
+    :root {
+        --primary-color: #007bff; /* A nice blue for links/buttons */
+        --text-color: #333;
+        --bg-color: #f4f4f9;
+        --font-family: sans-serif;
+    }
+
+    body {
+        font-family: var(--font-family);
+        /* The body margin/padding lines are already correctly set to 0. 
+        The !important declarations above ensure this is strictly enforced within the iframe context.
+        margin: 0; 
+        padding: 0; 
+        */
+        background-color: var(--bg-color);
+        color: var(--text-color);
+
+        /* --- STICKY FOOTER CHANGES START HERE --- */
+        display: flex;
+        flex-direction: column;
+        /* Use 100% instead of 100vh since we want it to fill the iframe's height */
+        min-height: 100%; 
+        /* --- STICKY FOOTER CHANGES END HERE --- */
+    }
+
+    /* Header and Navigation Styles */
+    header {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Note: This max-width will still create margins on very wide screens 
+           relative to the iframe, but it's good practice for content centering. */
+        max-width: 1200px; 
+        margin: 0 auto;
+        padding: 1rem 2rem;
+    }
+
+    nav h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: var(--text-color);
+        padding: 0.5rem 1rem;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: var(--primary-color);
+    }
+
+    /* Style for the active page link */
+    nav ul li a.active {
+        color: var(--primary-color);
+        font-weight: bold;
+        border-bottom: 2px solid var(--primary-color);
+    }
+
+    /* Main Content Layout */
+    main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        
+        /* --- STICKY FOOTER CHANGE --- */
+        flex-grow: 1; 
+    }
+
+    /* Hero Section (Home Page) */
+    #hero {
+        padding: 4rem 0;
+        text-align: left;
+        max-width: 670px;
+    }
+
+    #hero h1 {
+        font-size: 2.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 1.5rem;
+        transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Footer Styles */
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #333;
+        color: white;
+    }
+
+    /* Project Card Styles (Prototypes Page) */
+    .project-card {
+        border: 1px solid #ddd;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        background-color: white;
+    }
+
+    .project-card h3 {
+        color: var(--primary-color);
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name | Portfolio Home</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* All CSS moved above for Google Sites embed */
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <h1>[Your Name]</h1>
+            <h1>ITPorfolio</h1>
             <ul>
-                <li><a href="home.html" class="active">Home</a></li> 
-                <li><a href="aboutMe.html">About Me</a></li>
-                <li><a href="hciProto.html">HCI Prototypes</a></li>
+                <li><a href="https://sites.google.com/usa.edu.ph/gesulgon-portfolio/home" class="active">Home</a></li> 
+                <li><a href="https://sites.google.com/usa.edu.ph/gesulgon-portfolio/aboutme">About Me</a></li>
+                <li><a href="https://sites.google.com/usa.edu.ph/gesulgon-portfolio/myproto">HCI Prototypes</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h1>Hello, I'm [Your Name]</h1>
-            <h2>UX Designer & HCI Enthusiast</h2>
+            <h1>Hello, I'm Gesulgon, Shon Mikhael</h1>
+            <h2>UI/UX Designer & HCI Enthusiast</h2>
             <p>I design seamless human-computer interactions that drive engaging user experiences. Explore my work below!</p>
-            <a href="prototypes.html" class="cta-button">View My Prototypes</a>
+            <a href="https://sites.google.com/view/gesulgon-portfolio/myProto" class="cta-button">View My Prototypes</a>
         </section>
 
         </main>
 
     <footer>
-        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+        <p>&copy; 2025 Gesulgon, Shon Mikhael. All rights reserved.</p>
     </footer>
 </body>
 </html>
