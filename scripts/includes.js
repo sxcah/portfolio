@@ -2,12 +2,19 @@
  * Loads and injects HTML components from their static files.
  * It also handles setting the 'active' link in the sidebar.
  */
+const isDebugging = true; // Set to false in production
 
+let componentPathPrefix = '';
+
+if (isDebugging) {
+    componentPathPrefix = '/components/';
+} else {
+    componentPathPrefix = '/portfolio/components/';
+}
 
 async function loadComponents() {
     // 1. Define paths and target IDs
 
-    const componentPathPrefix = "/portfolio/components/";
     const components = [
         { path: componentPathPrefix + 'navbar.html', targetId: 'navbar-placeholder' },
         { path: componentPathPrefix + 'sidebar.html', targetId: 'sidebar-placeholder' }
