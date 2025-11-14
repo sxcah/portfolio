@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     border-right: 2px solid var(--accent-red);
 
-    padding: 24px;
+    padding: 24px 0;
 
     position: relative; 
     z-index: 100;
@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     justify-content: space-between;
 
-    min-width: 100%;
+    min-width: 210px;
     min-height: 64px;
 
     font-size: 16px;
@@ -226,7 +226,8 @@ h1, h2, h3, h4, h5, h6, p {
 
     border-bottom: 2px solid var(--accent-red);
 
-    padding-right: 32px;
+    padding: 32px;
+
 }
 
 .sidebar .icon {
@@ -240,6 +241,8 @@ h1, h2, h3, h4, h5, h6, p {
 .sidebar-nav {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     min-width: 100%;
 }
@@ -253,8 +256,32 @@ h1, h2, h3, h4, h5, h6, p {
     gap: 24px;
 }
 
+.sidebar-nav .nav-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px 0;
+    width: 100%;
+
+    transition: background-color 200ms ease-in-out;
+}
+
+.sidebar-nav .nav-group:hover {
+    background-color: var(--sidebar-hover);    
+}
+
 .sidebar-nav a   {
     text-decoration: none;
+
+    padding: 12px 24px;
+
+    border: 2px solid transparent;
+    border-radius: 12px;
+
+    min-width: 210px;
+
+    transition: border 200ms ease-in;
 }
 
 .sidebar-nav .icon {
@@ -310,6 +337,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 24px;
 
     border-radius: 12px;
 
@@ -360,7 +388,7 @@ main {
 
 /***** Section One *****/ 
 
-.index .section-one {
+.index .section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -388,3 +416,15 @@ main {
 /***** End Section One *****/
 
 /***** End Index *****/
+
+/***** Active Sidebar *****/ 
+
+.sidebar .active {
+    background-color: var(--sidebar-hover);
+}
+
+.sidebar .active a {
+    color: var(--accent-red);
+}
+
+/***** End Active Sidebar *****/
