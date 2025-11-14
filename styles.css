@@ -42,6 +42,21 @@ h1, h2, h3, h4, h5, h6, p {
 
 /***** Navbar *****/
 
+@keyframes dropDown {
+    /* 0% (Start): Move the navbar up by its height (approx. 120px) */
+    0% { transform: translateY(-120px); } 
+    /* 100% (End): Return to its natural position */
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideRight {
+    0% { transform: translateX(-240px); }
+    100% { transform: translateX(0); }
+}
+
+/* ------------------------------------------- */
+/* --- Existing .navbar Modification --- */
+/* ------------------------------------------- */
 .navbar {
     display: flex;
     flex-direction: row;
@@ -54,8 +69,20 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
 
     min-height: calc(12px * 6);
-
     padding: 24px 24px;
+
+    position: relative; /* Ensures transform works correctly and stacks over content */
+    z-index: 100;       /* Keep it on top of other elements */
+    
+    /* 1. Sets the initial off-screen state */
+    transform: translateY(-120px); 
+    
+    /* 2. Applies the animation */
+    /* Syntax: [Name] [Duration] [Timing] [Delay] [Fill-Mode] */
+    animation: dropDown 0.6s ease-out 0.1s forwards; 
+    
+    /* The existing transition line can be removed as the animation takes over: */
+    /* transition: transform 300ms ease; */
 }
 
 .nav-hero-container {
@@ -149,6 +176,19 @@ h1, h2, h3, h4, h5, h6, p {
     border-right: 2px solid var(--accent-red);
 
     padding: 24px;
+
+    position: relative; /* Ensures transform works correctly and stacks over content */
+    z-index: 100;       /* Keep it on top of other elements */
+    
+    /* 1. Sets the initial off-screen state */
+    transform: translateX(-240px); 
+    
+    /* 2. Applies the animation */
+    /* Syntax: [Name] [Duration] [Timing] [Delay] [Fill-Mode] */
+    animation: slideRight 0.6s ease-out 0.1s forwards; 
+    
+    /* The existing transition line can be removed as the animation takes over: */
+    /* transition: transform 300ms ease; */
 }
 
 .sidebar-nav {
@@ -208,6 +248,8 @@ h1, h2, h3, h4, h5, h6, p {
 
     font-size: 32px;
     color: var(--light-text);
+
+    min-width: 40px;
 }
 
 .sidebar-nav .text {
