@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+::root {
+    --primary-background-color: #3498db;
+    --secondary-background-color: #2ecc71;
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
