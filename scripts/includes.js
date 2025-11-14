@@ -7,10 +7,10 @@
 async function loadComponents() {
     // 1. Define paths and target IDs
 
-    let path = "../components/";
+    const componentPathPrefix = "../components/";
     const components = [
-        { path: (path,'navbar.html'), targetId: 'navbar-placeholder' },
-        { path: (path,'sidebar.html'), targetId: 'sidebar-placeholder' }
+        { path: componentPathPrefix + 'navbar.html', targetId: 'navbar-placeholder' },
+        { path: componentPathPrefix + 'sidebar.html', targetId: 'sidebar-placeholder' }
     ];
 
     // 2. Fetch and inject all components asynchronously
