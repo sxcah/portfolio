@@ -29,6 +29,8 @@ body {
     background-color: var(--secondary-bg);
     color: var(--text-color);
     font-size: 16px;
+
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -37,20 +39,26 @@ h1, h2, h3, h4, h5, h6, p {
 
 .page-container {
     display: flex;
-    min-height: 100vh;
+
+    height: calc(100vh - 120px);
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 /***** Navbar *****/
 
 @keyframes dropDown {
-    /* 0% (Start): Move the navbar up by its height (approx. 120px) */
     0% { transform: translateY(-120px); } 
-    /* 100% (End): Return to its natural position */
     100% { transform: translateY(0); }
 }
 
 @keyframes slideRight {
-    0% { transform: translateX(-240px); }
+    0% { transform: translateX(-380px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideleft {
+    0% { transform: translateX(380px); }
     100% { transform: translateX(0); }
 }
 
@@ -71,18 +79,13 @@ h1, h2, h3, h4, h5, h6, p {
     min-height: calc(12px * 6);
     padding: 24px 24px;
 
-    position: relative; /* Ensures transform works correctly and stacks over content */
-    z-index: 100;       /* Keep it on top of other elements */
-    
-    /* 1. Sets the initial off-screen state */
+    position: relative; 
+    z-index: 100;
+
     transform: translateY(-120px); 
-    
-    /* 2. Applies the animation */
+
     /* Syntax: [Name] [Duration] [Timing] [Delay] [Fill-Mode] */
-    animation: dropDown 0.6s ease-out 0.1s forwards; 
-    
-    /* The existing transition line can be removed as the animation takes over: */
-    /* transition: transform 300ms ease; */
+    animation: dropDown 1s ease-in-out forwards; 
 }
 
 .nav-hero-container {
@@ -177,18 +180,13 @@ h1, h2, h3, h4, h5, h6, p {
 
     padding: 24px;
 
-    position: relative; /* Ensures transform works correctly and stacks over content */
-    z-index: 100;       /* Keep it on top of other elements */
-    
-    /* 1. Sets the initial off-screen state */
-    transform: translateX(-240px); 
-    
-    /* 2. Applies the animation */
+    position: relative; 
+    z-index: 100;
+
+    transform: translateX(-380px); 
+
     /* Syntax: [Name] [Duration] [Timing] [Delay] [Fill-Mode] */
-    animation: slideRight 0.6s ease-out 0.1s forwards; 
-    
-    /* The existing transition line can be removed as the animation takes over: */
-    /* transition: transform 300ms ease; */
+    animation: slideRight 1s ease-in-out forwards; 
 }
 
 .sidebar-nav {
@@ -262,3 +260,17 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /***** End Sidebar *****/
+
+/***** Main *****/ 
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding: 12px;
+
+    overflow-y: auto;
+}
+
+/***** End Main *****/
