@@ -180,3 +180,8 @@ main {
 
     width: 125px;
 }
+
+.hero-container .hero-image img {
+    width: 250px;
+    height: auto;
+}
