@@ -15,6 +15,7 @@ function debuggingMode () {
 async function loadComponents() {
     
     const componentPathPrefix = debuggingMode();
+    console.log(componentPathPrefix);
     // 1. Define paths and target IDs
 
     const components = [
