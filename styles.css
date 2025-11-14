@@ -158,3 +158,14 @@ main {
     background-color: var(--sidebar-hover); 
     color: var(--text-color);
 }
+
+.hero-container {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
