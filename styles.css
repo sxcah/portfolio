@@ -159,6 +159,7 @@ main {
     color: var(--text-color);
 }
 
+/* --- Hero Section Styles --- */
 .hero-container {
     background-color: var(--card-bg);
     padding: 20px;
@@ -167,5 +168,15 @@ main {
     margin-bottom: 30px;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.hero-container .hero-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+
+    width: 125px;
 }
