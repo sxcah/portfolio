@@ -7,7 +7,7 @@
 async function loadComponents() {
     // 1. Define paths and target IDs
 
-    const componentPathPrefix = "./components/";
+    const componentPathPrefix = "../components/";
     const components = [
         { path: componentPathPrefix + 'navbar.html', targetId: 'navbar-placeholder' },
         { path: componentPathPrefix + 'sidebar.html', targetId: 'sidebar-placeholder' }
