@@ -2,11 +2,15 @@
  * Loads and injects HTML components from their static files.
  * It also handles setting the 'active' link in the sidebar.
  */
+
+
 async function loadComponents() {
     // 1. Define paths and target IDs
+
+    let path = "../components/";
     const components = [
-        { path: 'components/navbar.html', targetId: 'navbar-placeholder' },
-        { path: 'components/sidebar.html', targetId: 'sidebar-placeholder' }
+        { path: (path,'navbar.html'), targetId: 'navbar-placeholder' },
+        { path: (path,'sidebar.html'), targetId: 'sidebar-placeholder' }
     ];
 
     // 2. Fetch and inject all components asynchronously
