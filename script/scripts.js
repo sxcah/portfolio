@@ -41,6 +41,7 @@ async function loadComponents() {
 
     // 3. Highlight the active link after injection
     highlightActiveLink();
+    toggleSidebar();
 }
 
 /**
@@ -62,6 +63,60 @@ function highlightActiveLink() {
         // Fallback for root path ('/') which usually leads to index.html
         document.getElementById('link-index')?.classList.add('active');
     }
+}
+
+// Sidebar toggle functionality
+
+/**
+ * 
+ * 
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar-placeholder');
+    const hamburgerButton = document.getElementById('hamburger');
+
+    
+    hamburgerButton.addEventListener('click', () => {
+        if (sidebar.classList.contains('sidebar-close')) {
+            sidebar.classList.remove('sidebar-close');
+            sidebar.classList.add('sidebar-open');
+            sidebar.style.display = 'flex';
+        } else {
+            sidebar.classList.remove('sidebar-open');
+            sidebar.classList.add('sidebar-close');
+            sidebar.style.display = 'none';
+        }
+    });
+}
+ * 
+ */
+
+// FIX NEED TO ALSO OPEN SIDEBAR WITH TRANSITION
+
+function toggleSidebar() {
+    const sidebarContainer = document.getElementById('sidebar-placeholder');
+    const hamburgerBtn = document.getElementById('hamburger');
+
+    if (sidebarContainer && hamburgerBtn) {
+        
+        // This line ensures the sidebar starts with the "opened" style
+        // after loadComponents has run.
+        sidebarContainer.classList.add('sidebar-opened'); 
+        
+        hamburgerBtn.addEventListener('click', () => {
+            // Check if the sidebar is currently closed
+            if (sidebarContainer.classList.contains('sidebar-closed')) {
+                // OPENING: Remove closed, add opened, which triggers the slideRight animation
+                sidebarContainer.classList.remove('sidebar-closed');
+                sidebarContainer.classList.add('sidebar-opened');
+            } else {
+                // CLOSING: Remove opened, add closed, which triggers the sidebarSlideRight animation
+                sidebarContainer.classList.remove('sidebar-opened');
+                sidebarContainer.classList.add('sidebar-closed');
+            }
+        });
+    }
+
+    console.log(sidebarContainer.classList);
 }
 
 // Start the process once the page structure is ready

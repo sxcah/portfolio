@@ -62,11 +62,13 @@ h1, h2, h3, h4, h5, h6, p {
 @keyframes slideRight {
     0% {
         transform: translateX(-380px);
-        opacity: 0
+        opacity: 0;
+        width: 0;
     }
     100% {
         transform: translateX(0);
-        opacity: 1
+        opacity: 1;
+        width: 240px;
     }
 }
 
@@ -78,6 +80,19 @@ h1, h2, h3, h4, h5, h6, p {
     100% {
         transform: translateX(0);
         opacity: 1
+    }
+}
+
+@keyframes sidebarSlideRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+        width: 240px;
+    }
+    100% {
+        transform: translateX(-380px);
+        opacity: 0;
+        width: 0;
     }
 }
 
@@ -179,8 +194,23 @@ h1, h2, h3, h4, h5, h6, p {
 /***** Sidebar *****/ 
 
 .sidebar-placeholder {
-    display: block;
+    width: 240px;
+    flex-shrink: 0;
+    transition: width 0.3s ease-out, opacity 0.3s;
 }
+
+/***** Sidebar Toggle Functionality *****/ 
+
+.sidebar-placeholder.sidebar-closed {
+    animation: sidebarSlideRight 0.3s ease-out forwards;
+}
+
+.sidebar-placeholder.sidebar-opened {
+    animation: slideRight 0.3s ease-out forwards;
+}
+
+/***** End Sidebar Toggle Functionality *****/
+
 
 .sidebar {
     display: flex;
@@ -321,7 +351,10 @@ main {
     /* Syntax: [Name] [Duration] [Timing] [Delay] [Fill-Mode] */
     animation: slideLeft 1s ease-in-out 1s backwards;
 
+    width: fit-content;
     height: auto;
+
+    transition: all 1s ease;
 }
 
 /***** End Main *****/
