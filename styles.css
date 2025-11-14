@@ -74,6 +74,19 @@ main {
     color: var(--accent-red); /* Red Streak on logo icon */
 }
 
+.hamburger {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.hamburger i {
+    margin-right: 10px;
+    color: var(--accent-red); /* Red Streak on logo icon */
+}
+
+
+
 .user-info {
     display: flex;
     align-items: center;
@@ -115,6 +128,11 @@ main {
     left: 0; 
     z-index: 999; 
     border-right: 1px solid #333; /* Subtle separation line */
+    transition: transform 0.3s ease-out;
+}
+
+.sidebar-visible {
+    transform: translateX(250px);
 }
 
 .sidebar h2 {
