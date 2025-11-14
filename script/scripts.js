@@ -1,5 +1,5 @@
 function debuggingMode () {
-    const isDebugging = true;
+    const isDebugging = false; // CHANGE TO FALSE BEFORE PRODUCTION RELEASE
     let componentPathPrefix = '';
 
     if (isDebugging) {
