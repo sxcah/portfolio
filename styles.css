@@ -14,10 +14,14 @@ body {
     min-height: 100vh; 
     padding-top: 60px; /* Space for the fixed navbar */
 }
+
 main { 
-    flex-grow: 1; 
-    padding: 30px; 
-    margin-left: 250px; /* Offset for fixed sidebar */ 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    min-width: 100%;
+
 }
 
 /* --- Navbar Styles (from navbar.php) --- */
@@ -30,7 +34,7 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed; /* Fixed position */
     top: 0;
-    width: 100%; /* Spans the entire width */
+    min-width: 100%; /* Spans the entire width */
     z-index: 1000;
 }
 
