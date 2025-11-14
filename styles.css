@@ -144,6 +144,10 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 32px;
 }
 
+.nav-hero-container .hamburger:hover {
+    cursor: pointer;
+}
+
 .nav-hero-container .hero-text {
     display: flex;
     justify-content: center;
@@ -551,7 +555,6 @@ main::-webkit-scrollbar-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .about .hero-image {
