@@ -96,6 +96,10 @@ main {
     color: var(--accent-red); /* Red Streak on logo icon */
 }
 
+.hamburger i:hover {
+    cursor: pointer;
+}
+
 
 
 .user-info {
