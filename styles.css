@@ -33,6 +33,7 @@ body {
     min-height: 100vh;
 }
 
+
 h1, h2, h3, h4, h5, h6, p {
     color: var(--text-color);
 }
@@ -428,3 +429,36 @@ main {
 }
 
 /***** End Active Sidebar *****/
+
+/***** Scrollbar *****/ 
+
+main::-webkit-scrollbar {
+    /* Sets the width of the entire scrollbar */
+    width: 12px;
+}
+
+main::-webkit-scrollbar-track {
+    /* Styles the track (the background) of the scrollbar */
+    background: var(--secondary-bg);
+    margin-block: 24px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: var(--accent-red);
+    border-radius: 6px; 
+    border: 3px solid var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color);
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+main::-webkit-scrollbar-button {
+    display: none;
+}
+
+/***** End Scrollbar *****/
