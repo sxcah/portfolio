@@ -1,13 +1,160 @@
+/* --- Global Reset and Variables (Black, White, and Red Theme) --- */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+:root {
+    /* Main Theme Colors */
+    --primary-bg: #0d0d0d;       /* Near Black for sidebar and primary elements */
+    --secondary-bg: #1a1a1a;     /* Slightly lighter dark for main body */
+    --text-color: #f0f0f0;       /* Off-white for readability */
+    --light-text: #cccccc;       /* Light gray for secondary text */
+    
+    /* Accent Color (The Red Streak) */
+    --accent-red: #e74c3c;       /* Bright Red for highlighting */
+    
+    /* Component Colors */
+    --navbar-bg: #1a1a1a;        /* Navbar background */
+    --card-bg: #1f1f1f;          /* Card/main content background (subtle lift) */
+    --sidebar-hover: #333333;    /* Dark gray on hover */
+}
 
+/* --- Base Layout --- */
+body { 
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    font-size: 16px;
+}
 
-::root {
-    --primary-background-color: #3498db;
-    --secondary-background-color: #2ecc71;
-    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5em;
+}
+
+/* Page container to manage sidebar and main content layout */
+.page-container { 
+    display: flex; 
+    min-height: 100vh; 
+    padding-top: 60px; /* Space for fixed navbar */
+}
+
+/* Main content area */
+main { 
+    flex-grow: 1; 
+    padding: 30px; 
+    margin-left: 250px; /* Offset for fixed sidebar width */ 
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 30px;
+    background-color: var(--navbar-bg); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid var(--accent-red); /* The Red Streak */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.logo i {
+    margin-right: 10px;
+    color: var(--accent-red); /* Red Streak on logo icon */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1rem;
+    color: var(--light-text);
+}
+
+.user-info strong {
+    color: var(--text-color);
+}
+
+.user-role {
+    color: var(--accent-red); /* Use red for role/guest highlight */
+    font-weight: bold;
+}
+
+.btn-logout {
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-logout:hover {
+    color: var(--accent-red);
+}
+
+/* --- Sidebar Styles --- */
+.sidebar { 
+    width: 250px; 
+    background-color: var(--primary-bg); 
+    color: var(--text-color); 
+    padding: 20px 0; /* Adjusted padding to remove left/right space for full-width links */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4); 
+    position: fixed; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: 999; 
+    border-right: 1px solid #333; /* Subtle separation line */
+}
+
+.sidebar h2 {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    margin-top: 0;
+    padding: 0 20px 10px 20px;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 15px;
+}
+
+.sidebar-nav a { 
+    display: flex;
+    align-items: center;
+    padding: 12px 20px; /* Padding for links */
+    color: var(--light-text); 
+    text-decoration: none; 
+    transition: background-color 0.3s, color 0.3s; 
+    border-left: 5px solid transparent; /* Prepare for active streak */
+}
+
+.sidebar-nav a i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    color: var(--light-text);
+}
+
+/* The Active Link - The Red Streak Highlight */
+.sidebar-nav a.active { 
+    background-color: var(--sidebar-hover);
+    color: var(--text-color);
+    border-left: 5px solid var(--accent-red); /* The Red Streak */
+}
+
+.sidebar-nav a.active i {
+    color: var(--accent-red);
+}
+
+.sidebar-nav a:hover:not(.active) { 
+    background-color: var(--sidebar-hover); 
+    color: var(--text-color);
 }
