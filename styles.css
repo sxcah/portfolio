@@ -540,6 +540,7 @@ main::-webkit-scrollbar-button {
     box-shadow: 0 2px 16px var(--primary-bg);
     
     min-height: 300px;
+    min-width: 100vw;
 }
 
 .about .section-one .section-content {
