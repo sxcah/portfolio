@@ -33,5 +33,190 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
     color: var(--text-color);
-    margin-bottom: 0.5em;
 }
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/***** Navbar *****/
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--navbar-bg);
+
+    font-size: 24px;
+    border-bottom: 2px solid var(--accent-red);
+
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: calc(12px * 6);
+
+    padding: 24px 24px;
+}
+
+.nav-hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 240px;
+    
+    padding: 12px;
+
+    background-color: transparent;
+}
+
+.nav-hero-container .logo {
+    font-size: 32px;
+}
+
+.nav-hero-container .hamburger {
+    font-size: 32px;
+}
+
+.nav-hero-container .hero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 1000;
+}
+
+.nav-contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 240px;
+    
+    padding: 12px;
+
+    background-color: transparent;
+
+    border: 2px solid transparent;
+    border-radius: 24px;
+
+    transition: border 300ms ease;
+}
+
+.nav-contact-info:hover {
+    border: 2px solid var(--accent-red);
+}
+
+.nav-contact-info .contact-icon {
+    font-size: 32px;
+}   
+
+.nav-contact-info .contact-text a {
+    text-decoration: none;
+    font-style: none;
+    color: var(--light-text);
+}
+
+.nav-hero-container .icon, .nav-contact-info .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/***** End Navbar *****/
+
+/***** Sidebar *****/ 
+
+.sidebar-placeholder {
+    display: block;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--card-bg);
+
+    justify-content: flex-start;
+    align-items: center;
+    gap: 64px;
+
+    height: 100%;
+    min-width: 240px;
+
+    border-right: 2px solid var(--accent-red);
+
+    padding: 24px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sidebar .hero-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-width: 100%;
+    min-height: 64px;
+
+    font-size: 32px;
+    text-align: left;
+
+    border-bottom: 2px solid var(--accent-red);
+
+    padding-right: 32px;
+}
+
+.sidebar .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 100%;
+}
+
+.sidebar-nav .link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 24px;
+}
+
+.sidebar-nav a   {
+    text-decoration: none;
+}
+
+.sidebar-nav .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+    color: var(--light-text);
+}
+
+.sidebar-nav .text {
+    display: flex;
+    flex-grow: 1;
+
+    font-size: 32px;
+
+    border-bottom: 2px solid var(--accent-red);
+}
+
+/***** End Sidebar *****/
