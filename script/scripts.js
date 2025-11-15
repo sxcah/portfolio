@@ -27,15 +27,23 @@ async function loadComponents() {
 
     // 2. Fetch and inject all components asynchronously
     for (const comp of components) {
-        try {
-            const response = await fetch(comp.path);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+        // Find the target element
+        const targetElement = document.getElementById(comp.targetId);
+
+        // Check if the element exists on the current page
+        if (targetElement) { 
+            try {
+                const response = await fetch(comp.path);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const html = await response.text();
+                // Inject into the found element
+                targetElement.innerHTML = html;
+            } catch (error) {
+                // The error message will now only show for actual loading errors
+                console.error(`Could not load ${comp.path}:`, error);
             }
-            const html = await response.text();
-            document.getElementById(comp.targetId).innerHTML = html;
-        } catch (error) {
-            console.error(`Could not load ${comp.path}:`, error);
         }
     }
 
@@ -101,7 +109,7 @@ function toggleSidebar() {
         
         // This line ensures the sidebar starts with the "opened" style
         // after loadComponents has run.
-        sidebarContainer.classList.add('sidebar-opened'); 
+        sidebarContainer.classList.add('sidebar-closed');
         
         hamburgerBtn.addEventListener('click', () => {
             // Check if the sidebar is currently closed
