@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, p {
     overflow-x: hidden;
 }
 
-/***** Navbar *****/
+/***** Keyframes *****/ 
 
 @keyframes dropDown {
     0% {
@@ -97,15 +97,16 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-/* ------------------------------------------- */
-/* --- Existing .navbar Modification --- */
-/* ------------------------------------------- */
+/***** End Keyframes *****/
+
+/***** Navbar *****/
+
 .navbar {
     display: flex;
     flex-direction: row;
     background-color: var(--navbar-bg);
 
-    font-size: 24px;
+    font-size: 18px;
     border-bottom: 2px solid var(--accent-red);
 
     justify-content: space-between;
@@ -129,7 +130,7 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: space-between;
     align-items: center;
 
-    width: 240px;
+    width: 188px;
     
     padding: 12px;
 
@@ -152,7 +153,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 1000;
 }
 
@@ -192,6 +193,11 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size: 32px;
+    color: var(--light-text);
+
+    min-width: 40px;
 }
 
 /***** End Navbar *****/
@@ -375,7 +381,7 @@ main {
 .index {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 24px;
 
     border-radius: 12px;
@@ -432,8 +438,8 @@ main {
 .index .section {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-start;
+    justify-content: space-between;
 
     background-color: var(--card-bg);
 
@@ -443,16 +449,112 @@ main {
     box-shadow: 0 2px 16px var(--primary-bg);
     
     min-height: 300px;
+    max-width: fit-content;
 }
 
-.index .section-one .section-content {
+.index .section-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: flex-start;
 
-    max-width: 65%;
-    min-height: 275px;
+    max-width: 360px;
 }
+
+.index .section-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-width: max-content;
+    height: auto;
+}
+
+/***** PageLinks *****/ 
+
+.index .section-page-links {
+    background-color: var(--accent-white);
+}
+
+.index .page-links {
+    min-width: 420px;
+    max-width: 420px;
+
+    flex-grow: 1;
+
+    height: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.index .page-links .section-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0 36px;
+
+    width: 100%;
+}
+
+.index .page-links .section-group .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+
+    color: var(--card-bg);
+
+    min-width: 40px;
+}
+
+/***** AI ASSISTANT *****/ 
+
+/***** Need you to implement a slider and I hover over the anchor tag *****/
+
+/***** End AI ASSISTANT *****/
+
+
+.index .page-links a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+
+    margin-left: 24px;
+
+    text-decoration: none;
+    color: var(--dark-text);
+
+    height: -5px;
+
+    position: relative;
+}
+
+.index .page-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background-color: var(--accent-red);
+    border-radius: 2px;
+
+    transition: width 300ms ease;
+}
+
+.index .page-links a:hover::after {
+    width: 100%;
+}
+
+/***** End PageLinks *****/
 
 /***** End Section One *****/
 
