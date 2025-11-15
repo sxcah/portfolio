@@ -1,10 +1,9 @@
 async function loadComponents() {
-    componentPathPrefix = '/portfolio/components/';
+    let componentPathPrefix = '/portfolio/components/';
     const components = [
-        { path: componentPathPrefix + 'navbar.html', targetId: 'navbar-placeholder' },
+        { path: componentPathPrefix + 'topbar.html', targetId: 'topbar-placeholder' },
         { path: componentPathPrefix + 'sidebar.html', targetId: 'sidebar-placeholder' },
-        { path: componentPathPrefix + 'index.html', targetId: 'index-placeholder' },
-        { path: componentPathPrefix + 'about.html', targetId: 'about-placeholder' }
+        { path: componentPathPrefix + 'index.html', targetId: 'index-placeholder' }
     ];
 
     for (const comp of components) {
