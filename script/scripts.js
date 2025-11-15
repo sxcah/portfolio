@@ -95,6 +95,7 @@ function toggleSidebar() {
 function toggleSidebar() {
     const sidebarContainer = document.getElementById('sidebar-placeholder');
     const hamburgerBtn = document.getElementById('hamburger');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
 
     if (sidebarContainer && hamburgerBtn) {
         
@@ -108,15 +109,17 @@ function toggleSidebar() {
                 // OPENING: Remove closed, add opened, which triggers the slideRight animation
                 sidebarContainer.classList.remove('sidebar-closed');
                 sidebarContainer.classList.add('sidebar-opened');
+                hamburgerIcon.className = "fas fa-chevron-left";
             } else {
                 // CLOSING: Remove opened, add closed, which triggers the sidebarSlideRight animation
                 sidebarContainer.classList.remove('sidebar-opened');
                 sidebarContainer.classList.add('sidebar-closed');
+                hamburgerIcon.className = "fas fa-bars";
             }
         });
     }
+    
 
-    console.log(sidebarContainer.classList);
 }
 
 // Start the process once the page structure is ready
