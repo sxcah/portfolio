@@ -50,6 +50,7 @@ async function loadComponents() {
     // 3. Highlight the active link after injection
     highlightActiveLink();
     toggleSidebar();
+    displayName();
 }
 
 /**
@@ -128,6 +129,51 @@ function toggleSidebar() {
     }
     
 
+}
+
+function displayName() {
+    const heroTextElement = document.getElementById('hero-text');
+    const heroTextContainer = heroTextElement.parentElement; // Get the parent for width transition
+
+    if (heroTextElement && heroTextContainer) {
+
+        const longName = "Shon Mikhael Gesulgon";
+        const shortName = "SMG";
+        
+        // 1. Initial State Setup
+        heroTextElement.textContent = shortName;
+        // Apply the base class to the container to set its initial short width
+        heroTextContainer.classList.add('displayName'); 
+
+
+        heroTextContainer.addEventListener('mouseover', () => {
+            // EXPANDING:
+            // 1. Set the content to the long name (it will be hidden by overflow for a moment)
+            heroTextElement.textContent = longName; 
+
+            // 2. Remove the short-width class and add the long-width class.
+            // This triggers the CSS width transition (the slide effect).
+            heroTextContainer.classList.remove('displayName');
+            heroTextContainer.classList.add('expandName');
+        });
+
+        heroTextContainer.addEventListener('mouseout', () => {
+            // RETRACTING:
+            // 1. Remove the long-width class and add the short-width class.
+            // This triggers the CSS width transition (the slide back effect).
+            heroTextContainer.classList.remove('expandName'); 
+            heroTextContainer.classList.add('displayName');
+
+            // 2. Wait for the transition to complete (0.5s as set in CSS) before changing text back.
+            // This ensures the short name appears only when the container is narrow again.
+            setTimeout(() => {
+                 heroTextElement.textContent = shortName;
+            }, 300); 
+        });
+
+    } else {
+        console.error("Element with ID 'hero-text' not found.");
+    }
 }
 
 // Start the process once the page structure is ready

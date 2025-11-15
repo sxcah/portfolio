@@ -97,6 +97,15 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
+@keyframes displayName {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /***** End Keyframes *****/
 
 /***** Navbar *****/
@@ -112,8 +121,8 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: space-between;
     align-items: center;
 
-    min-height: calc(12px * 6);
-    padding: 24px 24px;
+    max-height: 72px;
+    padding: auto;
 
     position: relative; 
     z-index: 100;
@@ -127,10 +136,10 @@ h1, h2, h3, h4, h5, h6, p {
 .nav-hero-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
-    width: 188px;
+    min-width: fit-content;
     
     padding: 12px;
 
@@ -141,21 +150,54 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 32px;
 }
 
-.nav-hero-container .hamburger {
-    font-size: 32px;
-}
+/***** Start AI ASSISTANT *****/ 
 
-.nav-hero-container .hamburger:hover {
-    cursor: pointer;
-}
 
 .nav-hero-container .hero-text {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 24px;
-    font-weight: 1000;
+
+    /* REMOVE width: fit-content; */
+    
+    /* ADD a fixed min-width for the short name and allow transition */
+    min-width: 50px; 
+    transition: width 0.5s ease-in-out; /* ADD: Transition property for width */
+    overflow: hidden; /* ADD: Hides overflow during transition */
 }
+
+.nav-hero-container .hero-text #hero-text {
+    font-size: 18px;
+    font-weight: 100;
+
+    text-align: left;
+
+    /* REMOVE width: fit-content; */
+    line-height: normal;
+    white-space: nowrap; /* ADD: Ensures the text doesn't wrap */
+}
+
+/* New CSS class for the expanded state */
+.nav-hero-container .expandName {
+    /* Set a large width to accommodate the long name */
+    width: 248px; /* Adjust this value as needed for the full name "Shon Mikhael Gesulgon" */
+    font-size: 20px; /* Optional: Make the text slightly larger when expanded */
+    color: var(--accent-red); /* Optional: Change color when expanded */
+
+    animation: displayName 0ms ease-in-out forwards;
+}
+
+/* CSS class for the original/short state */
+.nav-hero-container .displayName {
+    /* Set a smaller width for the short name "SMG" */
+    width: 0px; 
+    font-size: 18px; 
+    color: var(--text-color);
+
+    animation: displayName 0ms ease-in-out forwards;
+}
+
+ /***** End AI ASSISTANT *****/
 
 .nav-contact-info {
     display: flex;
@@ -198,6 +240,20 @@ h1, h2, h3, h4, h5, h6, p {
     color: var(--light-text);
 
     min-width: 40px;
+}
+
+.nav-hero-container .hamburger {
+    font-size: 24px;
+    max-height: 30px;
+    max-width: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-hero-container .hamburger:hover {
+    cursor: pointer;
 }
 
 /***** End Navbar *****/
