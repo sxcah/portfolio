@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Inter', sans-serif;
+}
+
+/***** NavBar *****/ 
+
+.navBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 6em;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+
+    background-color: red;
+}
+
+.navBar
+.leftSectionContainer,
+
+.navBar
+.rightSectionContainer {
+    height: auto;
+    width: 100%;
+}
+
+.navBar
+.leftSectionContainer {
+    max-width: 25%;
+    background-color: transparent;
+}
+
+.navBar
+.rightSectionContainer {
+    background-color: transparent;
+}
+
+.navBar
+.leftSectionContainer
+.content,
+
+.navBar
+.rightSectionContainer
+.content {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+.navBar 
+.leftSectionContainer 
+.content {
+    background-color: black;
+
+    color: white;
+
+    padding: 0 2rem;
+}
+
+.navBar 
+.leftSectionContainer 
+.content
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+    width: 3rem;
+
+    background-color: red;
+}
+
+.navBar 
+.leftSectionContainer 
+.content
+.iconContainer
+.icon {
+    font-size: 2.4rem;
+}
+
+.navBar 
+.leftSectionContainer 
+.content
+.textContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.navBar
+.rightSectionContainer
+.content {
+    background-color: gray;
+}
+
+/***** End NavBar *****/
