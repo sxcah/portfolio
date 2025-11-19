@@ -156,7 +156,7 @@ body {
 .navBar 
 .leftSectionContainer 
 .content {
-    background-color: black;
+    background-color: var(--color-bg-primary);
     color: white;
 
     padding: .2rem 2rem;
@@ -173,7 +173,7 @@ body {
     height: 3rem;
     min-width: 3rem;
 
-    border: 2px solid var(--color-accent-red-100);
+    border: 2px solid var(--color-accent-red-700);
     border-radius: 50%;
 
     overflow: hidden;
@@ -215,7 +215,7 @@ body {
 .navBar
 .rightSectionContainer
 .content {
-    background-color: gray;
+    background-color: var(--color-bg-secondary);
 }
 
 /***** End NavBar *****/
