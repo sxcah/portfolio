@@ -6,10 +6,85 @@
     font-family: 'Inter', sans-serif;
 }
 
-/***** NavBar *****/ 
+:root {
+    /* ========================================================== */
+    /* 1. PRIMARY BACKGROUNDS (7 Shades of Dark Gray/Charcoal) */
+    /* ========================================================== */
+    --color-bg-root: #0A0A0A;        /* Deepest Black-out background (page body) */
+    --color-bg-primary: #121212;     /* Default background for main content sections */
+    --color-bg-secondary: #1E1E1E;   /* Background for cards, sidebars, or elevated surfaces */
+    --color-bg-tertiary: #272727;    /* Background for inputs, search bars, or subtle grouping */
+    --color-bg-hover: #333333;       /* Used for list item hover state */
+    --color-bg-active: #3C3C3C;      /* Used for active/selected state */
+    --color-bg-overlay: rgba(0, 0, 0, 0.7); /* Modal backdrop/overlay */
+
+    /* ========================================================== */
+    /* 2. PRIMARY TEXT & UI (7 Shades of White/Light Gray) */
+    /* ========================================================== */
+    --color-text-primary: #E0E0E0;   /* Most prominent text (headings, primary labels) */
+    --color-text-secondary: #A0A0A0; /* Less prominent text (subheadings, descriptions) */
+    --color-text-tertiary: #757575;  /* Low-contrast, fine print, timestamps */
+    --color-text-disabled: #5A5A5A;  /* Disabled text or icons */
+    --color-text-on-dark: #FFFFFF;   /* Text on top of deep accent colors (like buttons) */
+    --color-border-default: #333333; /* Default border color for dividers and separators */
+    --color-shadow-default: rgba(0, 0, 0, 0.5); /* Subtle shadows for depth */
+
+    /* ========================================================== */
+    /* 3. ACCENT COLOR (RED - 7 Shades) */
+    /* ========================================================== */
+    --color-accent-red-500: #E53935;  /* Primary Red accent (buttons, icons, active state) */
+    --color-accent-red-600: #D32F2F;  /* Darker Red (Button hover/active) */
+    --color-accent-red-700: #C62828;  /* Deep Red (For high contrast backgrounds) */
+    --color-accent-red-100: #FFCDD2;  /* Lightest Red (For subtle background fills) */
+    --color-text-accent: #E53935;     /* Red used specifically for links/text */
+    --color-border-accent: #C62828;   /* Red used for borders/outlines */
+    --color-bg-subtle-accent: #200000;/* Very dark red for minimal highlighting */
+
+    /* ========================================================== */
+    /* 4. UTILITY / STATUS COLORS (8 Shades) */
+    /* ========================================================== */
+    /* Success (Green) */
+    --color-success: #4CAF50;
+    --color-success-bg: #102510; 
+    
+    /* Warning (Yellow/Orange) */
+    --color-warning: #FFC107;
+    --color-warning-bg: #251B00; 
+
+    /* Error (Bright Red - distinct from accent) */
+    --color-error: #F44336;
+    --color-error-bg: #250000; 
+
+    /* Info (Blue) */
+    --color-info: #2196F3;
+    --color-info-bg: #001A25; 
+}
+
+body {
+    max-width: 1400px;
+    min-height: 100vh;
+
+    margin: 0 auto; 
+    
+    background-color: var(--color-bg-root);
+
+    position: relative;
+
+    padding: 2rem;
+
+    color: var(--color-text-primary);
+}
+
+.pageContainer {
+    display: flex;
+    flex: 1;
+
+    width: 100%;
+}
+/***** NavBar *****/
 
 .navBar {
-    position: absolute;
+    position: inherit;
     top: 0;
     left: 0;
 
@@ -20,7 +95,9 @@
     flex-direction: row;
     gap: 0;
 
-    background-color: red;
+    background-color: var(--color-bg-primary);
+
+    z-index: 1000;
 }
 
 .navBar
@@ -29,18 +106,34 @@
 .navBar
 .rightSectionContainer {
     height: auto;
-    width: 100%;
+
+    overflow: hidden;
+    border: 2px solid var(--color-accent-red-500);
 }
 
 .navBar
 .leftSectionContainer {
+    flex: 0 0 25%;
     max-width: 25%;
+
     background-color: transparent;
+
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+    border-right: transparent;
 }
 
 .navBar
 .rightSectionContainer {
+    flex: 1;
+
     background-color: transparent;
+
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    
+    border-left: transparent;
 }
 
 .navBar
@@ -64,10 +157,9 @@
 .leftSectionContainer 
 .content {
     background-color: black;
-
     color: white;
 
-    padding: 0 2rem;
+    padding: .2rem 2rem;
 }
 
 .navBar 
@@ -78,10 +170,13 @@
     justify-content: center;
     align-items: center;
 
-    height: auto;
-    width: 3rem;
+    height: 3rem;
+    min-width: 3rem;
 
-    background-color: red;
+    border: 2px solid var(--color-accent-red-100);
+    border-radius: 50%;
+
+    overflow: hidden;
 }
 
 .navBar 
@@ -89,7 +184,7 @@
 .content
 .iconContainer
 .icon {
-    font-size: 2.4rem;
+    font-size: 1rem;
 }
 
 .navBar 
@@ -101,6 +196,20 @@
     align-items: center;
 
     width: 100%;
+    height: 100%;
+
+    margin-left: 1rem;
+}
+
+.navBar 
+.leftSectionContainer 
+.content
+.textContainer
+.heroText {
+    font-size: 1.8rem;
+
+    width: 100%;
+    text-align: left;
 }
 
 .navBar
@@ -110,3 +219,11 @@
 }
 
 /***** End NavBar *****/
+
+/***** MainContainer *****/ 
+
+.mainContainer {
+    flex-grow: 1;
+}
+
+/***** End MainContainer *****/
