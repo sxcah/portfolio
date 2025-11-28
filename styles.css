@@ -192,7 +192,7 @@ body {
 .content
 .textContainer {
     display: flex;
-    justify-content: center;
+    justify-content: row;
     align-items: center;
 
     width: 100%;
@@ -206,10 +206,51 @@ body {
 .content
 .textContainer
 .heroText {
+    flex: 0 0 25%;
+    max-width: 100%;
     font-size: 1.8rem;
 
     width: 100%;
     text-align: left;
+
+    margin-right: 1.2rem;
+}
+
+
+.navBar
+.leftSectionContainer
+.content
+.textContainer
+.textIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    width: 40px;
+
+    border-radius: 50%;
+
+    transition: background-color 500ms ease;
+}
+
+.navBar
+.leftSectionContainer
+.content
+.textContainer
+.textIconContainer:hover {
+    background-color: var(--color-bg-hover);
+    
+    cursor: pointer;
+}
+
+.navBar
+.leftSectionContainer
+.content
+.textContainer
+.textIconContainer
+.textIcon {
+    font-size: .8rem;
 }
 
 .navBar
